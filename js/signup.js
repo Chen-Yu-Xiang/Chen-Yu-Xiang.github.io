@@ -70,6 +70,6 @@ write_firbase=function() {
 	.catch(err => {
 		console.log('Error getting documents', err);
 	});*/
-	getCookie('id');
+	alert(getCookie('id'));
 }
 //write_firbase();
