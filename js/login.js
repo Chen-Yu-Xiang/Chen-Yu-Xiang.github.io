@@ -1,5 +1,5 @@
 login=function(){
-	/* var Account_element = document.getElementById('Account');
+	 var Account_element = document.getElementById('Account');
 	 var Account= Account_element.value;
 	 var Password_element = document.getElementById('Password');
 	 var Password = Password_element.value;
@@ -18,7 +18,7 @@ login=function(){
 		if (snapshot.empty) {
 			console.log('No matching documents.');
 			alert("帳密錯誤");
-			//location.href = "./index.html";
+			location.href = "./index.html";
 		} 
 		else{
 			snapshot.forEach(doc => {
@@ -32,8 +32,8 @@ login=function(){
 	})
 	.catch(err => {
 		console.log('Error getting documents', err);
-	});*/
-	checkCookie();
+	});
+    alert(getCookie('id'));
  
  
  }
