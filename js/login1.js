@@ -52562,7 +52562,7 @@ login=function(){
 		else{
 			snapshot.forEach(doc => {
 				console.log(doc.id, '=>', doc.data());
-				setCookie('id',doc.data()['user_id'],30);
+				setCookie('id',doc.data()['user_id']+1,30);
 				
 			});
 			
@@ -52583,8 +52583,8 @@ function setCookie(cname,cvalue,exdays){
 	alert(cname+"="+cvalue+"; "+expires);
 	document.cookie = cname+"="+cvalue+"; "+expires;
 	alert(document.cookie);
-	//DelCookie(cname);
-	alert(getCookie(cname));
+	DelCookie(cname);
+	alert(document.cookie);
 }
 function getCookie(cname){
 	var name = cname + "=";
