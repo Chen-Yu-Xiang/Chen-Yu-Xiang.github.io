@@ -52583,7 +52583,7 @@ function setCookie(cname,cvalue,exdays){
 	alert(cname+"="+cvalue+"; "+expires);
 	document.cookie = cname+"="+cvalue+"; "+expires;
 	alert(document.cookie);
-	DelCookie(cname);
+	//DelCookie(cname);
 	alert(getCookie(cname));
 }
 function getCookie(cname){
