@@ -52573,8 +52573,8 @@ login=function(){
 		console.log('Error getting documents', err);
 	});
     alert(getCookie('id'));
- 
- 
+	
+	
  }
 function setCookie(cname,cvalue,exdays){
 	var d = new Date();
@@ -52583,6 +52583,8 @@ function setCookie(cname,cvalue,exdays){
 	alert(cname+"="+cvalue+"; "+expires);
 	document.cookie = cname+"="+cvalue+"; "+expires;
 	alert(document.cookie);
+	DelCookie(cname);
+	alert(getCookie(cname));
 }
 function getCookie(cname){
 	var name = cname + "=";
@@ -52606,4 +52608,11 @@ function checkCookie(){
     	}
 	}
 }
+
+function DelCookie(name){ 
+	var exp = new Date(); 
+	exp.setTime(exp.getTime() - 1); 
+	var cval=getCookie(name); 
+	if(cval!=null) document.cookie= name + "="+cval+";expires="+exp.toGMTString(); 
+} 
 },{"./firebase":143}]},{},[144]);
