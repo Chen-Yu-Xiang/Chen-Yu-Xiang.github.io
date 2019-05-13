@@ -25,7 +25,7 @@ login=function(){
 				console.log(doc.id, '=>', doc.data());
 				setCookie('id',doc.data()['user_id'],30);
 			});
-			location.href = "./index.html";
+			location.href = "./home.html";
 		}
 	})
 	.catch(err => {
