@@ -52558,7 +52558,7 @@ if(typeof FileReader==='undefined'){
 }
 //var User='User77/';
 //var User1='User77';
-var User1=getCookie('id');
+var User1='User'+getCookie('id');
 var User=User1+'/';
 alert(User1);
 if(User1==""){
