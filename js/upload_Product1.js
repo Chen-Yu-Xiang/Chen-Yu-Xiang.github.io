@@ -52945,7 +52945,7 @@ up=function(){
    ,reserve_price:0,seller_account:0,sold:0,state:0,winner_account:0
    };
    back=function(){
-	  window.location = "./index.html";
+	  window.location = "./personal.html";
    }
    seller=function(id){
 	   var Counter = db.collection('User23').doc(User1);
