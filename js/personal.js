@@ -83,13 +83,13 @@ citiesRef = db.collection('User23').doc(User1);
 			console.log('Error getting document', err);
 	   });
 write_firbase=function() {
-  var Username_element = document.getElementById('Username');
+  /*var Username_element = document.getElementById('Username');
   var Account_element = document.getElementById('Account'); 
   var Password_element = document.getElementById('Password');
   var Phone_element = document.getElementById('Phone'); 
   var Email_element = document.getElementById('Email');
   var Address_element = document.getElementById('Address');
-  var Birth_element = document.getElementById('Birth');
+  var Birth_element = document.getElementById('Birth');*/
 
   var Username=Username_element.value;
   var Account=Account_element.value;
@@ -153,7 +153,7 @@ write_firbase=function() {
 				console.log('Error getting documents', err);
 			});
 	}
-	qu(md);
+	
 	qu=function(callback){
 	citiesRef = db.collection('User23').doc(User1);
 	   var getDoc = citiesRef.get()
@@ -170,6 +170,6 @@ write_firbase=function() {
 			console.log('Error getting document', err);
 		});
 	}
-	
+	qu(md);
 } 
 

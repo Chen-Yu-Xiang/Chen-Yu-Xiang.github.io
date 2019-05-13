@@ -405,30 +405,9 @@ up=function(){
    price:Number(price),product_evaluation:0,product_id:0,product_kind:Number(category),product_quantity:Number(qty),product_title:product
    ,reserve_price:0,seller_account:0,sold:0,state:0,winner_account:0
    };
-   var getDoc = Counter.get()
-		.then(doc => {
-		if (!doc.exists) {
-			console.log('No such document!');
-		} else {
-			console.log('Document data:', doc.data());
-		}
-		    product=function(callback){
-				quid=doc.data()['id'];
-				Counter.set({
-					id: quid+1
-				});	
-				data['product_id']=quid.toString();
-				console.log(data);
-				citiesRef.doc('Product'+quid.toString()).set(data);			
-				alert("asas");
-				callback(quid);
-			}	
-			product(seller);
-		})
-		.catch(err => {
-		console.log('Error getting document', err);
-	});
-	
+   back=function(){
+	  window.location = "./index.html";
+   }
    seller=function(id){
 	   var Counter = db.collection('User23').doc(User1);
 	   data['is_Order']=0;
@@ -457,7 +436,29 @@ up=function(){
 			console.log('Error getting document', err);
 	   });
    }
-   back=function(){
-	window.location = "./index.html";
-   }
+   var getDoc = Counter.get()
+		.then(doc => {
+		if (!doc.exists) {
+			console.log('No such document!');
+		} else {
+			console.log('Document data:', doc.data());
+		}
+		    product=function(callback){
+				quid=doc.data()['id'];
+				Counter.set({
+					id: quid+1
+				});	
+				data['product_id']=quid.toString();
+				console.log(data);
+				citiesRef.doc('Product'+quid.toString()).set(data);			
+				alert("asas");
+				callback(quid);
+			}	
+			product(seller);
+		})
+		.catch(err => {
+		console.log('Error getting document', err);
+	});
+	
+
 }
