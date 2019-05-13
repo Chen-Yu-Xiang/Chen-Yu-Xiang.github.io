@@ -1,4 +1,4 @@
-w=function{
-	
+w=function(){
+	alert(getCookie('id'));
 	
 }
