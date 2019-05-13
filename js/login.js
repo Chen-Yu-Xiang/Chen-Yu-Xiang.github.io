@@ -1,5 +1,5 @@
 login=function(){
-	 /*var Account_element = document.getElementById('Account');
+	 var Account_element = document.getElementById('Account');
 	 var Account= Account_element.value;
 	 var Password_element = document.getElementById('Password');
 	 var Password = Password_element.value;
@@ -31,7 +31,4 @@ login=function(){
 	.catch(err => {
 		console.log('Error getting documents', err);
 	});
-   // alert(getCookie('id'));*/
-	setCookie('id',25,30);
-	
  }

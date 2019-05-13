@@ -1,6 +1,6 @@
 write_firbase=function() {
 
-  /*var Username_element = document.getElementById('Username');
+  var Username_element = document.getElementById('Username');
   var Username = Username_element.value;
   var Account_element = document.getElementById('Account');
   var Account = Account_element.value;
@@ -22,7 +22,7 @@ write_firbase=function() {
 		+'\n你的姓名是'+Address+'\n電子郵件是'+Birth		
   );  */
   
-  /*var Birth=new Date(Birth);
+  var Birth=new Date(Birth);
   if(Address.length==0 || Account.length==0 ||  ConfirmPassword.length==0 || Password.length==0 || Phone.length==0 || Username.length==0 || Email.length==0 || Birth.length==0){
 	  alert("資料尚未完整");
 	 // console.log('Document data1111:');
@@ -37,12 +37,12 @@ write_firbase=function() {
   password:Password,phone:Phone,seller_evaluation:"0",
   user_id: '0', user_name: Username,user_email:Email,user_birth:Birth,seller_Product:0
   };
-  /*var data={
+  var data={
   account: 0,buyer_evaluation:'0', cart_id: '0', address: 0,
   password:0,phone:0,seller_evaluation:"0",
   user_id: '0', user_name: 0,user_email:0,user_birth:0
-  };*/
-  /*var firebase= require("./firebase");
+  };
+  var firebase= require("./firebase");
   var query= require("./query");
   var db = firebase.firestore();
   var citiesRef = db.collection('User23');
@@ -69,7 +69,7 @@ write_firbase=function() {
 	})
 	.catch(err => {
 		console.log('Error getting documents', err);
-	});*/
-	alert(getCookie('id'));
+	});
+	
 }
 //write_firbase();

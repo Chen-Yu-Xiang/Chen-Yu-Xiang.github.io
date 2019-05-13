@@ -52537,39 +52537,115 @@ firebase.initializeApp(config);
 module.exports = firebase
 
 },{"firebase":3}],144:[function(require,module,exports){
-login=function(){
-	 var Account_element = document.getElementById('Account');
-	 var Account= Account_element.value;
-	 var Password_element = document.getElementById('Password');
-	 var Password = Password_element.value;
-	 
-	 if(Password.length==0 || Account.length==0){
-		  alert("帳密尚未完整");
-		 // console.log('Document data1111:');
-		  return ;
-	 }
-	  var firebase= require("./firebase");
-	  var db = firebase.firestore();
-	  var citiesRef = db.collection('User23');
+query=function(db,dir,id,data){
+	var cityRef = db.collection('Counter').doc(id);
+	var quid;
+	var getDoc = cityRef.get()
+		.then(doc => {
+		if (!doc.exists) {
+			console.log('No such document!');
+		} else {
+			console.log('Document data:', doc.data());
+		}
+				quid=doc.data()['id'];
+				cityRef.set({
+					id: quid+1
+				});	
+				data['user_id']=quid.toString();
+				console.log(data);
+				dir.doc(id+quid.toString()).set(data);
+				
+				alert("asas");
+				cityRef.collection('iamBuyer').doc('Bid1');
+				cityRef.collection('iamBuyer').doc('Order1');
+				dir.doc(id+quid.toString()).collection('iamSeller').doc('Order1').set({order_id:1});
+				dir.doc(id+quid.toString()).collection('iamSeller').doc('Product1').set({Product1:1});
+				dir.doc(id+quid.toString()).collection('myCart').doc('Cart').set({Product1:[1,2]});
+			
+		})
+		.catch(err => {
+		console.log('Error getting document', err);
+	});
+
+   // window.location = "./index.html";
+}
+
+module.exports = query;
+},{}],145:[function(require,module,exports){
+write_firbase=function() {
+
+  var Username_element = document.getElementById('Username');
+  var Username = Username_element.value;
+  var Account_element = document.getElementById('Account');
+  var Account = Account_element.value;
+  var Password_element = document.getElementById('Password');
+  var Password = Password_element.value;
+  var ConfirmPassword_element = document.getElementById('ConfirmPassword');
+  var ConfirmPassword = ConfirmPassword_element.value; 
+  var Phone_element = document.getElementById('Phone');
+  var Phone = Phone_element.value;
+  var Email_element = document.getElementById('Email');
+  var Email = Email_element.value;
+  var Address_element = document.getElementById('Address');
+  var Address = Address_element.value;
+  var Birth_element = document.getElementById('Birth');
+  var Birth = Birth_element.value;
+  /*alert('你的姓名是'+Username+'\n電子郵件是'+Account
+        +'\n你的姓名是'+Password+'\n電子郵件是'+ConfirmPassword
+		+'\n你的姓名是'+Phone+'\n電子郵件是'+Email
+		+'\n你的姓名是'+Address+'\n電子郵件是'+Birth		
+  );  */
   
-	 var allCities = citiesRef.where('account', '==',Account ).where('account', '==',Password ).get()
-	 .then(snapshot => {
+  var Birth=new Date(Birth);
+  if(Address.length==0 || Account.length==0 ||  ConfirmPassword.length==0 || Password.length==0 || Phone.length==0 || Username.length==0 || Email.length==0 || Birth.length==0){
+	  alert("資料尚未完整");
+	 // console.log('Document data1111:');
+	  return ;
+  }
+  if(ConfirmPassword!=Password){
+	  alert("請檢查密碼");
+	  return;
+  }
+  var data={ 
+  account: Account,buyer_evaluation:'0', cart_id: '0', address: Address,
+  password:Password,phone:Phone,seller_evaluation:"0",
+  user_id: '0', user_name: Username,user_email:Email,user_birth:Birth,seller_Product:0
+  };
+  var data={
+  account: 0,buyer_evaluation:'0', cart_id: '0', address: 0,
+  password:0,phone:0,seller_evaluation:"0",
+  user_id: '0', user_name: 0,user_email:0,user_birth:0
+  };
+  var firebase= require("./firebase");
+  var query= require("./query");
+  var db = firebase.firestore();
+  var citiesRef = db.collection('User23');
+  
+  
+  	//var citiesRef = db.collection('User23');
+	var allCities = citiesRef.where('account', '==',Account ).get()
+	.then(snapshot => {
 		if (snapshot.empty) {
 			console.log('No matching documents.');
-			alert("帳密錯誤");
+			query(db,citiesRef,'User',data);
+			alert("123");
 			//location.href = "./index.html";
 		} 
 		else{
+			alert("帳號重複，請重新輸入");
 			snapshot.forEach(doc => {
-				console.log(doc.id, '=>', doc.data());
-				setCookie('id',doc.data()['user_id'],30);
+			console.log(doc.id, '=>', doc.data());
 			});
-			location.href = "./index.html";
+			return;
 		}
+
+		
 	})
 	.catch(err => {
 		console.log('Error getting documents', err);
 	});
- }
+	
+}
+//write_firbase();
 
-},{"./firebase":143}]},{},[144]);
+},{"./firebase":143,"./query":144}]},{},[145]);
