@@ -82,7 +82,7 @@ citiesRef = db.collection('User23').doc(User1);
 			.catch(err => {
 			console.log('Error getting document', err);
 	   });
-write_firbase=function() {
+writefirbase=function() {
   /*var Username_element = document.getElementById('Username');
   var Account_element = document.getElementById('Account'); 
   var Password_element = document.getElementById('Password');
