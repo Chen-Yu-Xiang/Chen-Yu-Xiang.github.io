@@ -52554,7 +52554,7 @@ var User1='User'+getCookie('id');
 var User=User1+'/';
 alert(User1);
 if(User1==""){
-	location.href = "./login.html";
+	location.href = "./index.html";
 }
 storageRef.child(User+'picture').getDownloadURL().then(function(url) {
   // `url` is the download URL for 'images/stars.jpg'

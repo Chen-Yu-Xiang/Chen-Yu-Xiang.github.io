@@ -23,7 +23,7 @@ var User1='User'+getCookie('id');
 var User=User1+'/';
 alert(User1);
 if(User1==""){
-	location.href = "./login.html";
+	location.href = "./index.html";
 }
 
 
