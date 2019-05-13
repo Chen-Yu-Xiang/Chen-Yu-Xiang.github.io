@@ -52566,7 +52566,7 @@ if(User1==""){
 }
 
 
-function del(){
+ del=function(){
 	   var Counter = db.collection('User23').doc(User1);
 	   var getDoc = Counter.get()
 			.then(doc => {
@@ -52826,7 +52826,7 @@ function readFile3(){
 	  // Handle any errors
 	});*/
 }
-function readFile4(num=0){	
+function readFile4(){	
 	var file = this.files[0]; 
 	alert(this.files.length);
 	var reader = new FileReader(); 
@@ -52951,7 +52951,7 @@ up=function(){
 		} else {
 			console.log('Document data:', doc.data());
 		}
-		    function product(callback){
+		    product=function(callback){
 				quid=doc.data()['id'];
 				Counter.set({
 					id: quid+1
@@ -52968,7 +52968,7 @@ up=function(){
 		console.log('Error getting document', err);
 	});
 	
-   function seller(id){
+   seller=function(id){
 	   var Counter = db.collection('User23').doc(User1);
 	   data['is_Order']=0;
 	   citiesRef = db.collection('User23').doc(User1).collection('iamSeller');
@@ -52979,7 +52979,7 @@ up=function(){
 			} else {
 				console.log('Document data:', doc.data());
 			}
-					function jmp(callback){
+					jmp=function(callback){
 						quid=doc.data()['seller_Product'];
 						Counter.update({
 							seller_Product: quid+1
@@ -52996,7 +52996,7 @@ up=function(){
 			console.log('Error getting document', err);
 	   });
    }
-   function back(){
+   back=function(){
 	window.location = "./index.html";
    }
 }

@@ -35,7 +35,7 @@ storageRef.child(User+'picture').getDownloadURL().then(function(url) {
 }).catch(function(error) {
   // Handle any errors
 });
-readFile=function(){	
+function readFile(){	
 	var file = this.files[0]; 
 	alert(this.files.length);
 	var reader = new FileReader(); 

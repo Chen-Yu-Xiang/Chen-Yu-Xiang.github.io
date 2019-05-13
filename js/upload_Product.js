@@ -76,7 +76,7 @@ if(User1==""){
 //alert(today);
 del();
 
-readFile=function(){	
+function readFile(){	
 	var file = this.files[0]; 
 	alert(this.files.length);
 	var reader = new FileReader(); 
@@ -125,7 +125,7 @@ readFile=function(){
 	  // Handle any errors
 	});*/
 }
-readFile1=function(){	
+function readFile1(){	
 	var file = this.files[0]; 
 	alert(this.files.length);
 	var reader = new FileReader(); 
@@ -178,7 +178,7 @@ readFile1=function(){
 	  // Handle any errors
 	});*/
 }
-readFile2=function(){	
+function readFile2(){	
 	var file = this.files[0]; 
 	alert(this.files.length);
 	var reader = new FileReader(); 
@@ -233,7 +233,7 @@ readFile2=function(){
 	  // Handle any errors
 	});*/
 }
-readFile3=function(){	
+function readFile3(){	
 	var file = this.files[0]; 
 	alert(this.files.length);
 	var reader = new FileReader(); 
@@ -287,7 +287,7 @@ readFile3=function(){
 	  // Handle any errors
 	});*/
 }
-readFile4=function(){	
+function readFile4(){	
 	var file = this.files[0]; 
 	alert(this.files.length);
 	var reader = new FileReader(); 
