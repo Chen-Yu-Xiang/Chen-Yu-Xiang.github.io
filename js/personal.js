@@ -35,7 +35,7 @@ storageRef.child(User+'picture').getDownloadURL().then(function(url) {
 }).catch(function(error) {
   // Handle any errors
 });
-function readFile(){	
+readFile=function(){	
 	var file = this.files[0]; 
 	alert(this.files.length);
 	var reader = new FileReader(); 
@@ -121,7 +121,7 @@ write_firbase=function() {
   };*/
  
   	var citiesRef = db.collection('User23');
-	function md(id){
+	md= function(id){
 		  var citiesRef = db.collection('User23');  
 		  var allCities = citiesRef.where('account', '==',Account ).get()
 			.then(snapshot => {
@@ -154,7 +154,7 @@ write_firbase=function() {
 			});
 	}
 	qu(md);
-	function qu(callback){
+	qu=function(callback){
 	citiesRef = db.collection('User23').doc(User1);
 	   var getDoc = citiesRef.get()
 			.then(doc => {
