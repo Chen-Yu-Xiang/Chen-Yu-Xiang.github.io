@@ -52628,7 +52628,7 @@ write_firbase=function() {
 		if (snapshot.empty) {
 			console.log('No matching documents.');
 			query(db,citiesRef,'User',data);
-			alert("123");
+			alert("註冊成功");
 			//location.href = "./index.html";
 		} 
 		else{
