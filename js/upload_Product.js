@@ -449,7 +449,7 @@ up=function(){
 				Counter.set({
 					id: quid+1
 				});	
-				data['product_id']=quid.toString();
+				data['product_id']=quid;
 				console.log(data);
 				citiesRef.doc('Product'+quid.toString()).set(data);			
 				alert("asas");
