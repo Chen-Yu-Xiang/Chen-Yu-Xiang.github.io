@@ -51,7 +51,7 @@ function readFile(){
 		console.log(file);
 	} 
 	
-	var uploadTask = storageRef.child(User+'picture').put(file);
+	var uploadTask = storageRef.child('User/'+User+'picture').put(file);
 }
   var Username_element = document.getElementById('Username');
   var Account_element = document.getElementById('Account'); 
@@ -74,7 +74,7 @@ citiesRef = db.collection('User23').doc(User1);
 						Phone_element.value=doc.data()['phone'];
 						Email_element.value=doc.data()['user_email'];
 						Address_element.value=doc.data()['address'];
-						var date=(doc.data()['user_birth']).toDate();
+						var date=(doc.data()['birth']).toDate();
 						Birth_element.value=date;
 						//console.log(data);		
 						alert("aaaaasas");									

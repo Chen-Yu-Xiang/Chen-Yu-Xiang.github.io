@@ -28,7 +28,7 @@ if(User1==""){
 
 
  del=function(){
-	   var Counter = db.collection('User23').doc(User1);
+	   var Counter = db.collection('Counter').doc('Product');
 	   var getDoc = Counter.get()
 			.then(doc => {
 			if (!doc.exists) {
@@ -36,36 +36,37 @@ if(User1==""){
 			} else {
 				console.log('Document data:', doc.data());
 			}
-					quid=doc.data()['seller_Product']*5;
-					var desertRef = storageRef.child(User+quid.toString());
-					var desertRef1 = storageRef.child(User+(quid+1).toString());
-					var desertRef2 = storageRef.child(User+(quid+2).toString());
-					var desertRef3 = storageRef.child(User+(quid+3).toString());
-					var desertRef4 = storageRef.child(User+(quid+4).toString());
+					quid=doc.data()['id'];
+					'Products/'+'Products'+quid.toString()+'/0'
+					var desertRef = storageRef.child('Products/'+'Products'+quid.toString()+'/0');
+					var desertRef1 = storageRef.child('Products/'+'Products'+quid.toString()+'/1');
+					var desertRef2 = storageRef.child('Products/'+'Products'+quid.toString()+'/2');
+					var desertRef3 = storageRef.child('Products/'+'Products'+quid.toString()+'/3');
+					var desertRef4 = storageRef.child('Products/'+'Products'+quid.toString()+'/4');
 						desertRef.delete().then(function() {
-							console.log(User+quid.toString()+"delete successful");
+							console.log('Products/'+'Products'+quid.toString()+'/0'+"delete successful");
 						}).catch(function(error) {	
-						console.log(User+quid.toString()+"delete fail");
+						console.log('Products/'+'Products'+quid.toString()+'/0'+"delete fail");
 					});
 						desertRef1.delete().then(function() {
-							console.log(User+quid.toString()+"delete successful");
+							console.log('Products/'+'Products'+quid.toString()+'/1'+"delete successful");
 						}).catch(function(error) {	
-						console.log(User+(quid+1).toString()+"delete fail");
+						console.log('Products/'+'Products'+quid.toString()+'/1'+"delete fail");
 					});
 						desertRef2.delete().then(function() {
-							console.log(User+quid.toString()+"delete successful");
+							console.log('Products/'+'Products'+quid.toString()+'/2'+"delete successful");
 						}).catch(function(error) {	
-						console.log(User+(quid+2).toString()+"delete fail");
+						console.log('Products/'+'Products'+quid.toString()+'/2'+"delete fail");
 					});
 						desertRef3.delete().then(function() {
-							console.log(User+quid.toString()+"delete successful");
+							console.log('Products/'+'Products'+quid.toString()+'/3'+"delete successful");
 						}).catch(function(error) {	
-						console.log(User+(quid+3).toString()+"delete fail");
+						console.log('Products/'+'Products'+quid.toString()+'/3'+"delete fail");
 					});
 						desertRef4.delete().then(function() {
-							console.log(User+quid.toString()+"delete successful");
+							console.log('Products/'+'Products'+quid.toString()+'/4'+"delete successful");
 						}).catch(function(error) {	
-						console.log(User+(quid+4).toString()+"delete fail");
+						console.log('Products/'+'Products'+quid.toString()+'/4'+"delete fail");
 					});
 			})
 			.catch(err => {
@@ -91,7 +92,7 @@ function readFile(){
 		myDiv.src=this.result;
 		console.log(file);
 	} 
-	var Counter = db.collection('User23').doc(User1);
+	var Counter = db.collection('Counter').doc('Product');
 	var getDoc = Counter.get()
 			.then(doc => {
 			if (!doc.exists) {
@@ -99,8 +100,8 @@ function readFile(){
 			} else {
 				console.log('Document data:', doc.data());
 			}
-					var quid=doc.data()['seller_Product']*5;
-					var uploadTask = storageRef.child(User+quid.toString()).put(file);
+					var quid=doc.data()['id'];
+					var uploadTask = storageRef.child('Products/'+'Products'+quid.toString()+'/0').put(file);
 			})
 			.catch(err => {
 			console.log('Error getting document', err);
@@ -143,7 +144,7 @@ function readFile1(){
 	//var firebase= require("./firebase");
 	//var db = firebase.firestore();
 	//var storageRef = firebase.storage().ref();
-		var Counter = db.collection('User23').doc(User1);
+	var Counter = db.collection('Counter').doc('Product');
 	var getDoc = Counter.get()
 			.then(doc => {
 			if (!doc.exists) {
@@ -151,8 +152,8 @@ function readFile1(){
 			} else {
 				console.log('Document data:', doc.data());
 			}
-					var quid=doc.data()['seller_Product']*5+1;
-					var uploadTask = storageRef.child(User+quid.toString()).put(file);
+					var quid=doc.data()['id'];
+					var uploadTask = storageRef.child('Products/'+'Products'+quid.toString()+'/1').put(file);
 			})
 			.catch(err => {
 			console.log('Error getting document', err);
@@ -196,7 +197,7 @@ function readFile2(){
 	//var firebase= require("./firebase");
 	//var db = firebase.firestore();
 	//var storageRef = firebase.storage().ref();
-		var Counter = db.collection('User23').doc(User1);
+	var Counter = db.collection('Counter').doc('Product');
 	var getDoc = Counter.get()
 			.then(doc => {
 			if (!doc.exists) {
@@ -204,8 +205,8 @@ function readFile2(){
 			} else {
 				console.log('Document data:', doc.data());
 			}
-					var quid=doc.data()['seller_Product']*5+2;
-					var uploadTask = storageRef.child(User+quid.toString()).put(file);
+					var quid=doc.data()['id'];
+					var uploadTask = storageRef.child('Products/'+'Products'+quid.toString()+'/2').put(file);
 					
 					
 			})
@@ -251,7 +252,7 @@ function readFile3(){
 	//var firebase= require("./firebase");
 	//var db = firebase.firestore();
 	//var storageRef = firebase.storage().ref();
-		var Counter = db.collection('User23').doc(User1);
+	var Counter = db.collection('Counter').doc('Product');
 	var getDoc = Counter.get()
 			.then(doc => {
 			if (!doc.exists) {
@@ -259,9 +260,8 @@ function readFile3(){
 			} else {
 				console.log('Document data:', doc.data());
 			}
-					var quid=doc.data()['seller_Product']*5+3;
-					
-					var uploadTask = storageRef.child(User+quid.toString()).put(file);
+					var quid=doc.data()['id'];
+					var uploadTask = storageRef.child('Products/'+'Products'+quid.toString()+'/3').put(file);
 			})
 			.catch(err => {
 			console.log('Error getting document', err);
@@ -305,7 +305,7 @@ function readFile4(){
 		//var firebase= require("./firebase");
 		//var db = firebase.firestore();
 		//var storageRef = firebase.storage().ref();
-			var Counter = db.collection('User23').doc(User1);
+		var Counter = db.collection('Counter').doc('Product');
 		var getDoc = Counter.get()
 				.then(doc => {
 				if (!doc.exists) {
@@ -313,8 +313,8 @@ function readFile4(){
 				} else {
 					console.log('Document data:', doc.data());
 				}
-						var quid=doc.data()['seller_Product']*5+4;
-						var uploadTask = storageRef.child(User+quid.toString()).put(file);				
+						var quid=doc.data()['id'];
+					var uploadTask = storageRef.child('Products/'+'Products'+quid.toString()+'/4').put(file);				
 				})
 				.catch(err => {
 				console.log('Error getting document', err);
