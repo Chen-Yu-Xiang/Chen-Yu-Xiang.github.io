@@ -403,7 +403,7 @@ up=function(){
    var data={build_time:date,delivery:[obj[0].checked == true,obj[2].checked == true,obj[4].checked == true],
    delivery_fee:[Number(price1),Number(price2),0],finish_time:0,increase_price:0,is_Bid:false,payment:[false,false,false],
    price:Number(price),product_evaluation:0,product_id:0,product_kind:Number(category),product_quantity:Number(qty),product_title:product
-   ,reserve_price:0,seller_account:0,sold:0,state:0,winner_account:0
+   ,reserve_price:0,seller_account:'0',sold:0,state:0,winner_account:'0',product_intro:introduction
    };
    back=function(){
 	  window.location = "./personal.html";
@@ -424,7 +424,8 @@ up=function(){
 						Counter.update({
 							seller_Product: quid+1
 						});	
-						data['product_id']=id.toString();
+						data['product_id']=id;
+						data['seller_account']=doc.data()['account'];
 						console.log(data);
 						citiesRef.doc('Product'+quid.toString()).set(data);			
 						alert("aaaaasas");

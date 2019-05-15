@@ -12,7 +12,7 @@ query=function(db,dir,id,data){
 				cityRef.set({
 					id: quid+1
 				});	
-				data['user_id']=quid.toString();
+				data['user_id']=quid;
 				console.log(data);
 				dir.doc(id+quid.toString()).set(data);
 				

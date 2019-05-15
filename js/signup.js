@@ -35,7 +35,7 @@ write_firbase=function() {
   var data={ 
   account: Account,buyer_evaluation:'0', cart_id: '0', address: Address,
   password:Password,phone:Phone,seller_evaluation:"0",
-  user_id: '0', user_name: Username,user_email:Email,user_birth:Birth,seller_Product:0
+  user_id: 0, user_name: Username,user_email:Email,birth:Birth,seller_Product:0
   };
   /*var data={
   account: 0,buyer_evaluation:'0', cart_id: '0', address: 0,
