@@ -52950,7 +52950,7 @@ up=function(){
    seller=function(id){
 	   var Counter = db.collection('User23').doc(User1);
 	   data['is_Order']=0;
-	   citiesRef = db.collection('User23').doc(User1).collection('iamSeller');
+	   citiesRef1 = db.collection('User23').doc(User1).collection('iamSeller');
 	   var getDoc = Counter.get()
 			.then(doc => {
 			if (!doc.exists) {
@@ -52965,8 +52965,9 @@ up=function(){
 						});	
 						data['product_id']=id;
 						data['seller_account']=doc.data()['account'];
+						citiesRef.doc('Product'+id.toString()).update({'seller_account':data['seller_account']});	
 						console.log(data);
-						citiesRef.doc('Product'+quid.toString()).set(data);			
+						citiesRef1.doc('Product'+quid.toString()).set(data);			
 						alert("aaaaasas");
 						callback();
 					}	
