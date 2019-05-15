@@ -52590,7 +52590,7 @@ function readFile(){
 		console.log(file);
 	} 
 	
-	var uploadTask = storageRef.child('User/'+User+'picture').put(file);
+	var uploadTask = storageRef.child('Users/'+User+'picture').put(file);
 }
   var Username_element = document.getElementById('Username');
   var Account_element = document.getElementById('Account'); 
