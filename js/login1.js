@@ -52544,16 +52544,18 @@ var citiesRef = db.collection('User23');
 
 
 var cook=getCookie('id');
-
 alert(cook);
 var allCities = citiesRef.where('user_id', '==',cook ).get()
 	 .then(snapshot => {
+		 alert(snapshot.empty);
 		if (snapshot.empty) {
-			console.log('No matching documents.');
-			alert("帳密錯誤");
+			//console.log('No matching documents.');
+			//alert("帳密錯誤");
 			//location.href = "./index.html";
+			alert("123");
 		} 
 		else{
+			alert("3456");
 			location.href = "./home.html";
 		}
 	})
