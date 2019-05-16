@@ -52544,7 +52544,7 @@ var citiesRef = db.collection('User23');
 
 
 var cook=getCookie('id');
-//alert(cook);
+alert(cook);
 var allCities = citiesRef.where('user_id', '==',cook ).get()
 	 .then(snapshot => {
 		 alert(snapshot.empty);
@@ -52552,10 +52552,10 @@ var allCities = citiesRef.where('user_id', '==',cook ).get()
 			//console.log('No matching documents.');
 			//alert("帳密錯誤");
 			//location.href = "./index.html";
-			//alert("123");
+			alert("123");
 		} 
 		else{
-			//alert("3456");
+			alert("3456");
 			location.href = "./home.html";
 		}
 	})
