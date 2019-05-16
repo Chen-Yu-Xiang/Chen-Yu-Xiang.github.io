@@ -9,6 +9,7 @@ alert(cook);
 var allCities = citiesRef.where('user_id', '==',cook ).get()
 	 .then(snapshot => {
 		 alert(snapshot.empty);
+		 alert(snapshot.size);
 		if (snapshot.empty) {
 			//console.log('No matching documents.');
 			//alert("帳密錯誤");
