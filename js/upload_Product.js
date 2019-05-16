@@ -19,13 +19,14 @@ if(typeof FileReader==='undefined'){
 }
 //var User='User77/';
 //var User1='User77';
-var User1='User'+getCookie('id');
+var cook=getCookie('id');
+var User1='User'+cook;
 var User=User1+'/';
-alert(User1);
-if(User1==""){
+
+if(cook==""){
+	alert("請先登入，跳轉至登入頁面");
 	location.href = "./index.html";
 }
-
 
  del=function(){
 	   var Counter = db.collection('Counter').doc('Product');
@@ -79,7 +80,7 @@ del();
 
 function readFile(){	
 	var file = this.files[0]; 
-	alert(this.files.length);
+//	alert(this.files.length);
 	var reader = new FileReader(); 
 	//var bigImg = document.createElement("img");
 	reader.readAsDataURL(file); 
@@ -90,7 +91,7 @@ function readFile(){
 		var myDiv = document.getElementById('myDiv'); //获得dom对象
 		//myDiv.appendChild(bigImg);
 		myDiv.src=this.result;
-		console.log(file);
+		//console.log(file);
 	} 
 	var Counter = db.collection('Counter').doc('Product');
 	var getDoc = Counter.get()
@@ -128,7 +129,7 @@ function readFile(){
 }
 function readFile1(){	
 	var file = this.files[0]; 
-	alert(this.files.length);
+	//alert(this.files.length);
 	var reader = new FileReader(); 
 	//var bigImg = document.createElement("img");
 	reader.readAsDataURL(file); 
@@ -139,7 +140,7 @@ function readFile1(){
 		var myDiv1 = document.getElementById('myDiv1'); //获得dom对象
 		//myDiv.appendChild(bigImg);
 		myDiv1.src=this.result;
-		console.log(file);
+		//console.log(file);
 	} 
 	//var firebase= require("./firebase");
 	//var db = firebase.firestore();
@@ -181,7 +182,7 @@ function readFile1(){
 }
 function readFile2(){	
 	var file = this.files[0]; 
-	alert(this.files.length);
+	//alert(this.files.length);
 	var reader = new FileReader(); 
 	//var bigImg = document.createElement("img");
 	reader.readAsDataURL(file); 
@@ -192,7 +193,7 @@ function readFile2(){
 		var myDiv2 = document.getElementById('myDiv2'); //获得dom对象
 		//myDiv.appendChild(bigImg);
 		myDiv2.src=this.result;
-		console.log(file);
+		//console.log(file);
 	} 
 	//var firebase= require("./firebase");
 	//var db = firebase.firestore();
@@ -236,7 +237,7 @@ function readFile2(){
 }
 function readFile3(){	
 	var file = this.files[0]; 
-	alert(this.files.length);
+	//alert(this.files.length);
 	var reader = new FileReader(); 
 	//var bigImg = document.createElement("img");
 	reader.readAsDataURL(file); 
@@ -247,7 +248,7 @@ function readFile3(){
 		var myDiv3 = document.getElementById('myDiv3'); //获得dom对象
 		//myDiv.appendChild(bigImg);
 		myDiv3.src=this.result;
-		console.log(file);
+		//console.log(file);
 	} 
 	//var firebase= require("./firebase");
 	//var db = firebase.firestore();
@@ -289,7 +290,7 @@ function readFile3(){
 }
 function readFile4(){	
 	var file = this.files[0]; 
-	alert(this.files.length);
+	//alert(this.files.length);
 	var reader = new FileReader(); 
 	//var bigImg = document.createElement("img");
 	reader.readAsDataURL(file); 
@@ -300,7 +301,7 @@ function readFile4(){
 		var myDiv4 = document.getElementById('myDiv4'); //获得dom对象
 		//myDiv.appendChild(bigImg);
 		myDiv4.src=this.result;
-		console.log(file);
+		//console.log(file);
 	} 
 		//var firebase= require("./firebase");
 		//var db = firebase.firestore();
@@ -389,11 +390,11 @@ up=function(){
 		alert("宅急便運費尚未填寫");
 		return;
 	}
-	alert('category'+category+'\nprice'+price
+	/*alert('category'+category+'\nprice'+price
         +'\nproduct'+product+'\nbidorUnbid'+bidorUnbid
 		+'\nintroduction'+introduction+'\nprice1'+price1
 		+'\nprice2'+price2+'\nqty'+qty
-   );  
+   );  */
    //var firebase= require("./firebase");
    //var db = firebase.firestore();
    var citiesRef = db.collection('Product');
@@ -427,9 +428,9 @@ up=function(){
 						data['product_id']=id;
 						data['seller_account']=doc.data()['account'];
 						citiesRef.doc('Product'+id.toString()).update({'seller_account':data['seller_account']});	
-						console.log(data);
+						//console.log(data);
 						citiesRef1.doc('Product'+quid.toString()).set(data);			
-						alert("aaaaasas");
+						alert("上傳成功");
 						callback();
 					}	
 					jmp(back);
@@ -453,7 +454,7 @@ up=function(){
 				data['product_id']=quid;
 				console.log(data);
 				citiesRef.doc('Product'+quid.toString()).set(data);			
-				alert("asas");
+				//alert("asas");
 				callback(quid);
 			}	
 			product(seller);

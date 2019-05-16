@@ -13,10 +13,10 @@ query=function(db,dir,id,data){
 					id: quid+1
 				});	
 				data['user_id']=quid;
-				console.log(data);
+				//console.log(data);
 				dir.doc(id+quid.toString()).set(data);
 				
-				alert("asas");
+				//alert("asas");
 				cityRef.collection('iamBuyer').doc('Bid1');
 				cityRef.collection('iamBuyer').doc('Order1');
 				dir.doc(id+quid.toString()).collection('iamSeller').doc('Order1').set({order_id:1});

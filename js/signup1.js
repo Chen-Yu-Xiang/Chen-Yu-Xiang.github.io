@@ -52552,10 +52552,10 @@ query=function(db,dir,id,data){
 					id: quid+1
 				});	
 				data['user_id']=quid;
-				console.log(data);
+				//console.log(data);
 				dir.doc(id+quid.toString()).set(data);
 				
-				alert("asas");
+				//alert("asas");
 				cityRef.collection('iamBuyer').doc('Bid1');
 				cityRef.collection('iamBuyer').doc('Order1');
 				dir.doc(id+quid.toString()).collection('iamSeller').doc('Order1').set({order_id:1});
@@ -52590,11 +52590,11 @@ write_firbase=function() {
   var Address = Address_element.value;
   var Birth_element = document.getElementById('Birth');
   var Birth = Birth_element.value;
-  alert('你的姓名是'+Username+'\n電子郵件是'+Account
+  /*alert('你的姓名是'+Username+'\n電子郵件是'+Account
         +'\n你的姓名是'+Password+'\n電子郵件是'+ConfirmPassword
 		+'\n你的姓名是'+Phone+'\n電子郵件是'+Email
 		+'\n你的姓名是'+Address+'\n電子郵件是'+Birth		
-  );  
+  );*/ 
   
   var Birth=new Date(Birth);
   if(Address.length==0 || Account.length==0 ||  ConfirmPassword.length==0 || Password.length==0 || Phone.length==0 || Username.length==0 || Email.length==0 || Birth.length==0){
@@ -52633,9 +52633,9 @@ write_firbase=function() {
 		} 
 		else{
 			alert("帳號重複，請重新輸入");
-			snapshot.forEach(doc => {
+			/*snapshot.forEach(doc => {
 			console.log(doc.id, '=>', doc.data());
-			});
+			});*/
 			return;
 		}
 
